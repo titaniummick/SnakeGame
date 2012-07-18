@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<project name="TestNDoc">
+
+<ndoc>
+
+<assemblies basedir="SnakeGame\bin\Debug">
+
+<include name="SnakeGame.exe" />
+
+</assemblies>
+
+<summaries>
+
+<include name="SnakeGame.xml" />
+
+</summaries>
+
+<documenters>
+
+<documenter name="MSDN">
+
+<property name="OutputDirectory" value="D:\documents" />
+
+<property name="HtmlHelpName" value="SnakeGame" />
+
+<property name="ShowMissingSummaries" value="True" />
+
+<property
+
+name="HtmlHelpCompilerFilename" value="hhc.exe" />
+
+<property name="IncludeFavorites" value="False" />
+
+<property name="Title" value="SnakeGame (NDoc)" />
+
+<property name="SplitTOCs" value="False" />
+
+<property name="DefaulTOC" value="" />
+
+<property name="ShowVisualBasic" value="False" />
+
+<property name="ShowMissingSummaries" value="True" />
+
+<property name="ShowMissingRemarks" value="False" />
+
+<property name="ShowMissingParams" value="True" />
+
+<property name="ShowMissingReturns" value="True" />
+
+<property name="ShowMissingValues" value="True" />
+
+<property name="DocumentInternals" value="True" />
+
+<property name="DocumentProtected" value="True" />
+
+<property name="DocumentPrivates" value="True" />
+
+<property name="DocumentEmptyNamespaces" value="False" />
+
+<property name="IncludeAssemblyVersion" value="True" />
+
+<property name="CopyrightText" value="Copyright - CodeSanook.com" />
+
+<property name="CopyrightHref" value="http://www.codesanook.com" />
+
+</documenter>
+
+</documenters>
+
+</ndoc>
+
+</project>

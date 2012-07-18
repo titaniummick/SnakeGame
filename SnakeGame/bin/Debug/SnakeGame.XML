@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SnakeGame</name>
+    </assembly>
+    <members>
+        <member name="T:SnakeGame.Point">
+            <summary>
+            class สำหรับสร้าง Point object ตำแหน่งของจุดบนหน้าจอ คู่ลำดับ x,y (x,y)
+            </summary>
+        </member>
+        <member name="M:SnakeGame.Point.#ctor(System.Int32,System.Int32)">
+            <summary>
+            constructor ของ Point class
+            </summary>
+            <param name="x">ค่า x</param>
+            <param name="y">ค่า y</param>
+        </member>
+        <member name="P:SnakeGame.Point.X">
+            <summary>
+            ค่าในแนวแกน X
+            </summary>
+        </member>
+        <member name="P:SnakeGame.Point.Y">
+            <summary>
+            ค่าในแนวแกน Y
+            </summary>
+        </member>
+        <member name="T:SnakeGame.ScoreBoard">
+            <summary>
+            class สำหรับสร้าง ScoreBoard object
+            </summary>
+        </member>
+        <member name="F:SnakeGame.ScoreBoard.grassField">
+            <summary>
+            อ้างอิง GrassField object
+            </summary>
+        </member>
+        <member name="M:SnakeGame.ScoreBoard.#ctor(SnakeGame.GrassField)">
+            <summary>
+            constructor ของ ScoreBoard class 
+            รับค่า GrassField object เข้ามา
+            </summary>
+            <param name="grassField">GrassField object</param>
+        </member>
+        <member name="M:SnakeGame.ScoreBoard.Render">
+            <summary>
+            แสดงค่าคะแนนของผู้เล่นออกสู่หน้าจอเป็นข้อความและตัวเลข
+            </summary>
+        </member>
+        <member name="P:SnakeGame.ScoreBoard.Score">
+            <summary>
+            เก็บค่าคะแนนปัจจุบันของเกม
+            </summary>
+        </member>
+        <member name="T:SnakeGame.Snake">
+            <summary>
+            class สำหรับสร้าง Snake object
+            </summary>
+        </member>
+        <member name="F:SnakeGame.Snake.grassField">
+            <summary>
+            สำหรับอ้างอิงถึง GlassField object
+            </summary>
+        </member>
+        <member name="F:SnakeGame.Snake.tailPoint">
+            <summary>
+            เก็บค่าจุดที่หางของงูก่อนที่จะ update point
+            </summary>
+        </member>
+        <member name="F:SnakeGame.Snake.direction">
+            <summary>
+            เก็บค่าจุดใหม่ที่หัวของงูกำลังมั่งหน้าไป
+            </summary>
+        </member>
+        <member name="M:SnakeGame.Snake.#ctor(SnakeGame.GrassField)">
+            <summary>
+            constructor ของ Snack class รับ GrassField object เข้ามา
+            </summary>
+            <param name="grassField">GrassField object</param>
+        </member>
+        <member name="M:SnakeGame.Snake.UpdatePoint">
+            <summary>
+            เลื่อนค่าตำแหน่งในตัวของงูไปข้างหน้า
+            </summary>
+        </member>
+        <member name="M:SnakeGame.Snake.Forward">
+            <summary>
+            สั่งให้งูเคลื่อนที่ไปข้างหน้า
+            </summary>
+        </member>
+        <member name="M:SnakeGame.Snake.IsCollide">
+            <summary>
+            ตรวจสอบว่างูชนกับกำแพงของสนามหญ้า (GrassField) 
+            หรือชนตัวมันเองแล้วหรือยัง
+            </summary>
+            <returns>true เมื่องูได้ชนกำแพงหรือตัวมันเอง</returns>
+        </member>
+        <member name="M:SnakeGame.Snake.IsEatFood">
+            <summary>
+            ตรวจสอบว่างูได้กินอาหารไปแล้วหรือไม่
+            </summary>
+            <returns>true เมื่องูได้กินอาหารไปแล้ว</returns>
+        </member>
+        <member name="M:SnakeGame.Snake.Lengthen">
+            <summary>
+            ยืดตัวของงูให้ยาวขึ้นไปหนึ่งจุด
+            </summary>
+        </member>
+        <member name="M:SnakeGame.Snake.Render">
+            <summary>
+            แสดงตัวส่วนหัว ลำตัว และหางของงูออกสู่หน้าจอโดยใช้ตัวอักษร #
+            </summary>
+        </member>
+        <member name="P:SnakeGame.Snake.LastKeyBoardInput">
+            <summary>
+            ปุ่ม key board ล่าสุดที่ผู้ใช้กดได้แก่ up down left rihgt arrow
+            </summary>
+        </member>
+        <member name="P:SnakeGame.Snake.Points">
+            <summary>
+            จุดของหัว ลำตัว และหางของงู
+            </summary>
+        </member>
+        <member name="P:SnakeGame.Snake.Food">
+            <summary>
+            property อ้างอิงถึง Food Object ไว้สำหรับตรวจสอบว่างูกินอาหารแล้วหรือไม่
+            </summary>
+        </member>
+        <member name="T:SnakeGame.Food">
+            <summary>
+            class สำหรับสร้าง Food object
+            </summary>
+        </member>
+        <member name="F:SnakeGame.Food.grassField">
+            <summary>
+            อ้างอิงถึง GrassField object
+            </summary>
+        </member>
+        <member name="M:SnakeGame.Food.#ctor(SnakeGame.GrassField)">
+            <summary>
+            constructor ของ Food class
+            รับ GrassField object เข้ามา
+            </summary>
+            <param name="grassField">GrassField object</param>
+        </member>
+        <member name="M:SnakeGame.Food.Render">
+            <summary>
+            แสดงอาหารออกสู่หน้าจอเป็นตัวอักษร @
+            โดยทำการสุ่มตำแหน่งออกมา
+            </summary>
+        </member>
+        <member name="P:SnakeGame.Food.Point">
+            <summary>
+            เก็บค่าตำแหน่งของอาหารที่แสดงในหน้าจอ
+            </summary>
+        </member>
+        <member name="T:SnakeGame.GameEngine">
+            <summary>
+            class สำหรับเป็นจุดเริ่มต้นของเกม (Main method)
+            และสำหรับสั่งให้เกมมีการทำงานซ้ำ เพื่อให้งูเเคลื่อนที่ไปเรื่อยๆ 
+            รับ keyboard input จากผู้ใช้เพื่อเปลี่ยนทิศทางการเคลื่อนที่ของงู
+            </summary>
+        </member>
+        <member name="F:SnakeGame.GameEngine.grassField">
+            <summary>
+            อ้างอิงถึง GrassField object
+            </summary>
+        </member>
+        <member name="F:SnakeGame.GameEngine.snake">
+            <summary>
+            อ้างอิงถึง Snake object
+            </summary>
+        </member>
+        <member name="F:SnakeGame.GameEngine.food">
+            <summary>
+            อ้างอิงถึง Food object
+            </summary>
+        </member>
+        <member name="F:SnakeGame.GameEngine.scoreBoard">
+            <summary>
+            อ้างอิงถึง ScoreBoard object
+            </summary>
+        </member>
+        <member name="F:SnakeGame.GameEngine.keyboardInput">
+            <summary>
+            อ้างอิงถึงปุ่มที่ผู้เล่นได้กด
+            </summary>
+        </member>
+        <member name="M:SnakeGame.GameEngine.Main">
+            <summary>
+            จุดเริ่มต้นของ Game
+            </summary>
+        </member>
+        <member name="M:SnakeGame.GameEngine.Loop">
+            <summary>
+            ทำให้เกมมีการทำงานซ้ำ สั่งให้งูเคลื่อนที่ข้างหน้าไปเรื่อย แสดงอาหารให้งูเข้าไปจับกินได้
+            </summary>
+        </member>
+        <member name="T:SnakeGame.GrassField">
+            <summary>
+            class สำหรับสร้าง GrassField Ojbect สนามหญ้า
+            </summary>
+        </member>
+        <member name="M:SnakeGame.GrassField.Render">
+            <summary>
+            แสดงสนามหญ้าออกสู่หน้าจอโดยมีกำแพงสี่ด้านเป็นรูปสี่เหลี่ยมพื้นผ้า และมีพื้นที่ว่างตรงกลาง
+            </summary>
+        </member>
+        <member name="P:SnakeGame.GrassField.Top">
+            <summary>
+            เก็บค่าระยะห่างจากด้านบนของหน้าจอจนถึงตำแหน่งด้านในของกำแพงด้านบน
+            </summary>
+        </member>
+        <member name="P:SnakeGame.GrassField.Bottom">
+            <summary>
+            เก็บค่าระยะห่างจากด้านบนของหน้าจอจนถึงตำแหน่งด้านในของกำแพงด้านล่าง
+            </summary>
+        </member>
+        <member name="P:SnakeGame.GrassField.Left">
+            <summary>
+            เก็บค่าระยะห่างจากด้านซ้ายของหน้าจอจนถึงตำแหน่งด้านในของกำแพงด้านซ้าย
+            </summary>
+        </member>
+        <member name="P:SnakeGame.GrassField.Right">
+            <summary>
+            เก็บค่าระยะห่างจากด้านซ้ายของหน้าจอจนถึงตำแหน่งด้านในของกำแพงด้านขวา
+            </summary>
+        </member>
+    </members>
+</doc>
